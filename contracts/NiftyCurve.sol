@@ -89,7 +89,7 @@ contract NiftyCurve is Power, ERC20 {
             return _purchaseAmount;
         }
 
-        if (rr == MathUtils.PERC_DIVISOR) {
+        if (rr == MAX_RR) {
             return MathUtils.percOf(cSupply, _purchaseAmount, rBalance);
         }
 
@@ -112,7 +112,7 @@ contract NiftyCurve is Power, ERC20 {
             return rBalance;
         }
 
-        if (rr == MathUtils.PERC_DIVISOR) {
+        if (rr == MAX_RR) {
             return MathUtils.percOf(rBalance, _saleAmount, cSupply);
         }
 
